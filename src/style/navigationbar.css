@@ -1,0 +1,15 @@
+.h3{
+	color:  #ffffff;
+	font: normal 36px 'Cookie', cursive;
+    margin: 0;
+	width: 100%;
+	text-align: left;
+	font: bold 16px sans-serif;
+
+	padding: 55px 50px;
+	margin-top: 80px;
+}
+
+.h3 span{
+        color:  #5383d3;
+    }
