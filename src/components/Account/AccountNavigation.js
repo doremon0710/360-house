@@ -10,7 +10,7 @@ const AccountNavigation = () => (
 		<AuthUserContext.Consumer>
 			{authUser =>
 				//Check for User roles
-				authUser ? <AccountNavigationAgent authUser={authUser} /> : <AccountNavigationClient />
+				true ? <AccountNavigationAgent authUser={authUser} /> : <AccountNavigationClient />
 			}
 		</AuthUserContext.Consumer>
 	</div>
