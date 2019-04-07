@@ -1,90 +1,41 @@
 import React from 'react';
 import Footer from '../Footer';
 import Header from '../Header/header';
-import { Collapse, CardBody, Button, Card, Row, Col, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Button, Card, Row, Col } from 'react-materialize';
 import 'bootstrap/dist/css/bootstrap.css';
 import '../../style/footer.css';
 import '../../style/homepage.css';
 
 
-class Landing extends React.Component{
+//for redirect and routing
+import { Redirect, Router, Route } from 'react-router-dom';
+import * as ROUTES from "../../constants/routes";
+import { withRouter } from 'react-router';
+import {withFirebase} from '../../server/Firebase/index';
+
+
+
 // var Footer = React.Footer;
-
-constructor(props) {
-  super(props);
-  this.toggle = this.toggle.bind(this);
-  this.state = {
-    locations: [],
-    newsearch: '',
-    collapse: false 
-  };
-}
-toggle() {
-  this.setState(state => ({ collapse: !state.collapse }));
-}
-
-componentDidMount() {
-  //get firebase
-}
-
-
-render() {return(
+const Landing = () => (
   <div>
-    <div className="root">
+    <div>
   <div className="container-bg">
     <div className="container" id="containerID">
       <div className="row">
         <div className="col-lg-12">
           <div id="content">
-            <h1 class="typewriter"> Let' explore them all </h1>
+            <h1> Let' explore them all </h1>
             <div className="container h-100">
               <div className="d-flex justify-content-center h-100">
-                {/* <div className="searchbar">
+                <div className="searchbar">
                   <input className="search_input" type="text" name placeholder="Search by zipcode, bedrooms or anything..." />
                   <a href="#" className="search_icon"><i className="fas fa-search" /></a>
-                </div> */}
-               <div>
-        <br></br>         
-        <Button color ="primary" variant="outline-primary" size ="lg" onClick={this.toggle} style={{ marginBottom: '1rem' }}>Search</Button>
-        <Collapse isOpen={this.state.collapse}>
-        <Form>
-        <FormGroup>
-          <Label for="exampleEmail">Email</Label>
-          <Input type="email" name="email" id="exampleEmail" placeholder="with a placeholder" />
-        </FormGroup>
-        <FormGroup>
-          <Label for="examplePassword">Password</Label>
-          <Input type="password" name="password" id="examplePassword" placeholder="password placeholder" />
-        </FormGroup>
-        <FormGroup>
-          <Label for="exampleSelect">Select</Label>
-          <Input type="select" name="select" id="exampleSelect">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-          </Input>
-        </FormGroup>
-        <FormGroup>
-          <Label for="exampleSelectMulti">Select Multiple</Label>
-          <Input type="select" name="selectMulti" id="exampleSelectMulti" name="newsearch" onChange={this.onChange} value={this.state.newsearch} multiple>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-          </Input>
-        </FormGroup>
-        <Button>Submit</Button>
-      </Form>
-        </Collapse>
-      </div>
+                </div>
               </div>
             </div>
-            <h3 class="typewriter"> Your dream house is waiting... </h3>
+            <h3> Your dream house is waiting... </h3>
             <hr />
-            {/* <button className="btn btn-primary-outline clickOn btn-lg">Check this out!</button> */}
+            <button className="btn btn-primary-outline clickOn btn-lg">Check this out!</button>
           </div>
         </div>
       </div>
@@ -128,7 +79,9 @@ render() {return(
     </div>
   </div>
 </div>
+
+          <Footer style={{"position":"absolute","left":"0",  "bottom":"0", "right":"0"}} />
   </div>
         );
-}       }
+        
         export default Landing;

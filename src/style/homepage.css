@@ -12,10 +12,9 @@ $color: rgb(255, 0, 0);
 .navbar-default { margin : 0 !important; }
 .container-bg{
 	padding-top: 0px;
-  background: transparent;
-  /* background-color: #fafafa; */
-	background-size: auto;
-	background: url(https://i.imgur.com/y4tlMtG.jpg) center;
+	background: transparent;
+	/* background-size: auto;
+	background: url(https://imgur.com/1CRVw6t.jpg) center; */
 	font-family: 'Roboto Mono', monospace;
 	font-family:  -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu;
 }
@@ -26,9 +25,10 @@ a {
 }
 
 
+
 html{
 	height: 100%;
-	/* background:url("https://i.imgur.com/y4tlMtG.jpg") no-repeat center center fixed; */
+	background:url("https://i.imgur.com/y4tlMtG.jpg") no-repeat center center fixed;
 	  -webkit-background-size: cover;
 	  -moz-background-size: cover;
 	  -o-background-size: cover;
@@ -282,10 +282,10 @@ hr {
 
 #extraInfo{
 	font-weight: bold;
-	color: black;
+	color: #ff0080;
 	font-size: 30px;
 	text-align: center;
-	background-color: #FAFAFA;
+	background-color: $color;
   animation: loading $loadingTime linear infinite;
 	font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu;
 	text-shadow: 0px 4px 3px rgba(0,0,0.4),
@@ -319,27 +319,4 @@ hr {
 
 .clickOn{
 	color: #ff0080;
-}
-
-.typewriter {
-  overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: .15em black; /* The typwriter cursor */
-  white-space: nowrap; /* Keeps the content on a single line */
-  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-  letter-spacing: .15em; /* Adjust as needed */
-  animation: 
-    typing 3.5s steps(40, end),
-    blink-caret .75s step-end infinite;
-}
-
-/* The typing effect */
-@keyframes typing {
-  from { width: 0 }
-  to { width: 80% }
-}
-
-/* The typewriter cursor effect */
-@keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: black; }
 }
